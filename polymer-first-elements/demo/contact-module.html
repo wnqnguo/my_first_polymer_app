@@ -1,0 +1,64 @@
+<link rel="import" href="../../polymer/polymer.html">
+<link rel="import" href="../../iron-icons/iron-icons.html">
+<link rel="import" href="../icon-toggle.html">
+<link rel="import" href="../../paper-card/paper-card.html">
+<link rel="import" href="../../paper-button/paper-button.html">
+
+<dom-module id="contact-module">
+
+
+  <template>
+
+    <style>
+      /* local DOM styles go here */
+
+    </style>
+    <paper-card >
+    <div class="customer-info-block">
+    <div  class="customer-info-jobId"> <paper-button on-click="onJobNumberClick">{{user.jobid}}</paper-button></div >
+    <div  class="customer-info-name"> <paper-button on-click="onNameClick">{{user.name}}</paper-button></div >
+    <div  class="customer-info-address"><a href="http://maps.google.com/?q=423 Capp St. San Francisco, CA 94110">
+      <paper-button on-click="onAddressClick">{{user.address}}</paper-button></a></div >
+    <div  class="customer-info-phone"><a href="tel:5126527788"> <paper-button on-click="onPhoneNumberClick">{{user.phone}}</paper-button></a></div >
+  </div>
+    <!-- local DOM goes here -->
+     <paper-card ></paper-card>
+  </template>
+
+  <script>
+  Polymer({
+    /* this is the element's prototype */
+    is: 'contact-module',
+    properties: {
+      user:{
+        type:Object,
+        value: function(){
+          return {name:"Jammie Mountz", address: "423 Capp St. San Francisco, CA 94110", phone:"(512)652-7788", jobid:"JB-725133-00"}
+        }
+      },
+      pressed: {
+        type: Boolean,
+        value: false,
+        notify: true,
+        reflectToAttribute: true
+      }
+    },
+
+    onJobNumberClick: function() {
+        window.alert(this.user.jobid);
+    },
+    onNameClick: function() {
+        window.alert(this.user.name);
+    },
+    onAddressClick: function() {
+        window.alert(this.user.address);
+    },
+    onPhoneNumberClick: function() {
+        window.alert(this.user.phone);
+    }
+
+  });
+
+  </script>
+
+</dom-module>

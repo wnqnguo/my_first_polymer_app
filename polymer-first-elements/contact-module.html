@@ -1,0 +1,34 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../paper-card/paper-card.html">
+
+<dom-module id="card-contact">
+
+
+  <template>
+
+    <style>
+      /* local DOM styles go here */
+      :host {
+        display: inline-block;
+      }
+      iron-icon {
+        fill: rgba(0,0,0,0);
+        stroke: currentcolor;
+      }
+      :host([pressed]) iron-icon {
+        fill: currentcolor;
+      }
+    </style>
+    <iron-icon icon="polymer">
+    </iron-icon>
+    <!-- local DOM goes here -->
+    <span>Not much here yet.</span>
+  </template>
+
+  <script>
+  Polymer({
+    is: 'card-contact',
+  });
+  </script>
+
+</dom-module>
